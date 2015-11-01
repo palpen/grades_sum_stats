@@ -42,6 +42,8 @@ program define grade_stats
 
 	}
 
+	clear
+
 end
 
 //end
