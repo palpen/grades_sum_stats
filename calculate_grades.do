@@ -73,7 +73,7 @@ end
 // test
 clear
 set more off
-grade_stats "/Users/palermospenano/Desktop/Dropbox/temporary/grades_stats" "grades_data.csv" 10
+grade_stats "/Users/palermospenano/Desktop/Dropbox/temporary/grade_statistics" "grades_data.csv" 10
 
 
 //end
