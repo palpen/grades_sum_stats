@@ -5,4 +5,4 @@ The list of grades must be in comma-delimited format and saved as a csv file. On
 
 > grade_stats "PATH_TO_GRADE_LIST" "grades_data.csv" 10
 
-in Stata's command line. grades_data.csv is a sample list of grades to test the code. 10 is for the number of bins of the histograms.
+in Stata's command line. grades_data.csv is a sample list of grades to test the code. 10 is for the number of bins of the histograms. The output will be saved to the folder in PATH_TO_GRADE_LIST.

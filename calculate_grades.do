@@ -1,29 +1,3 @@
-/*
-Description: calculation summary statistics of class grades
-
-inputs:
-- path_to_folder 
-- name_of_grade_file 
-- number_for_histogram_bins
-
-output:
-- tif files of histograms
-- xml file for excel
-- word
-- text file
-
-notes:
-- program needs to know which column contain the grades
-- need to distinguish between grades column and student number column (hard code names)
-- grades data has to be as a csv file
-- needs outreg2
-
-to do:
-- 
-
-techniques:
-- !_rc means _rc is 0---! reverses the condition from _rc == 1 to _rc == 0
-*/
 
 capture program drop grade_stats
 
@@ -41,7 +15,7 @@ program define grade_stats
 		// check variable type
 		capture confirm numeric variable `x'
 
-		if !_rc {
+		if !_rc {  // !_rc means _rc is 0---! reverses the condition from _rc == 1 to _rc == 0
 
 			display "`x' is numeric"
 			local grade_vars `grade_vars' `x'  // save numeric (grade) variables only
