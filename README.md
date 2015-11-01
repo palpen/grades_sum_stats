@@ -9,11 +9,11 @@ The list of grades must be in comma-delimited format and saved as a csv file. On
 
 in Stata's command line. grades_data.csv is a sample list of grades to test the code, where the grade for each question is recorded (along with the total). 10 is for the number of bins of the histograms. The output will be saved to the folder in PATH_TO_GRADE_LIST.
 
-The output table looks like this
+The table created will look like this
 
 ![alt text][table]
 
-In the table, *sd* is the standard deviation and *p#* is the #-th percentile.
+In the table, **sd** is the standard deviation and **p#** is the #-th percentile.
 
 
 TO DO:
