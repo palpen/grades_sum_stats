@@ -1,5 +1,5 @@
 # Grades Summary Statistics
-A Stata program that calculates various summary statistics of the class grades and also creates a histogram for each test question
+A Stata program that calculates various summary statistics of the class grades and also creates a histogram for each test question.
 
 The program uses the outreg2 package.
 
