@@ -1,6 +1,6 @@
 *
 !.gitignore
-!calculate_grades.do
+!calculate_grades.ado
 !grades_data.csv
 !README.md
 !sample_table.png
