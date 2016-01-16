@@ -5,11 +5,11 @@ program define grade_stats
 
 	version 13.1
 
-	display "`1'"
-	insheet using "`1'/`2'", comma // path to grades as csv file
+	insheet using "`1'/`2'", comma
 
 	display "iterating over varlist of `1'"
 
+	// save  numeric variables to a local macro
 	ds, not(type string)
 	local grade_vars `r(varlist)'
 	ds, has(type string)
