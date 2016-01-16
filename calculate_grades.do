@@ -17,8 +17,6 @@ program define grade_stats
 
 	display as result `"The variables `: subinstr local grade_vars `" "' `", "', all' are numeric  And "' _n `"The variables `: subinstr local string_vars `" "' `", "', all' are string variables"'
 
-	display "`grade_vars'"
-
 	// calculate summary statistics
 	outreg2 using grade_statistics, replace sum(detail) keep(`grade_vars') eqkeep(N mean sd min max p1 p5 p10 p25 p50 p75 p90 p95 p99) excel word
 
