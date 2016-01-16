@@ -17,7 +17,7 @@ The table created will look similar to the figure below
 
 In the table, **sd** is the standard deviation and **p#** is the #-th percentile.
 
-To make the program available to all projects, save calculate_grades.ado in your personal ado directory, which you can find by running `sysdir` in the command line.
+To make the program available to all projects, save calculate_grades.ado in your personal ado directory, which you can find by running `sysdir` in Stata's command line.
 
 TO DO:
 - use the syntax command to parse arguments
