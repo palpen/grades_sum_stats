@@ -32,4 +32,38 @@ program define grade_stats
 
 end
 
+/*
+SAMPLE:
+
+// Counts the number of observations in between range of values
+
+/*
+To do:
+add lowest bound
+*/
+
+
+sysuse auto, clear
+
+sum price, d
+
+
+
+local grade_interval "15906 13466 11385 6342 5006 4195 3895 3748"
+local n: word count `grade_interval'
+
+forvalues i = 1/`n' {
+
+  local a : word `i' of `grade_interval'
+  local next = `i' + 1
+  local b : word `next' of `grade_interval'
+
+  display "`a' to `b'"
+  count if inrange(price, `b', `a')
+
+}
+
+*/
+
+
 //end
