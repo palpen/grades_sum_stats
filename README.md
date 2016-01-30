@@ -3,9 +3,9 @@ A Stata program that calculates various summary statistics of the class grades a
 
 The program uses the outreg2 package.
 
-The list of grades must be in comma-delimited format and saved as a csv file---see the sample grades data, grades_data.csv. Note that there are no columns for the student numbers/id---the script at present cannot distinguish between student numbers and grades. Also, there is no limit to the number grade columns in the csv file.
+The list of grades must be in comma-delimited format and saved as a csv file---see the sample grades data, grades_data.csv. Note that there are no columns for the student numbers/id---the script at present cannot distinguish between student numbers and grades. Also, there are no limits to the number of grade columns in the csv file.
 
-Once the grades are in proper format and calculate_grades.ado is saved in the current working directory, calculate the summary statistics and create histograms of the grades by executing
+Once the grades are in their proper format and calculate_grades.ado is saved in the current working directory, run the script by entering
 
 > grade_stats "PATH_TO_GRADE_LIST" "grades_data.csv" 10
 
