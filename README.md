@@ -2,7 +2,7 @@
 
 ### Description
 
-A Stata program that calculates various summary statistics of the class grades and also creates a histogram for each test question.
+A Stata program that calculates various summary statistics and creates histograms for grades of each test question.
 
 ### Required Package
 
