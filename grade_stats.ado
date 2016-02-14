@@ -3,6 +3,9 @@ capture program drop grade_stats
 
 program define grade_stats
 
+	clear
+	set more off
+
 	version 13.1
 
 	insheet using "`1'/`2'", comma
