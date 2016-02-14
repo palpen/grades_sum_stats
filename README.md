@@ -1,13 +1,20 @@
 # Grades Summary Statistics
+
+### Description
+
 A Stata program that calculates various summary statistics of the class grades and also creates a histogram for each test question.
 
-The program uses the outreg2 package.
+### Required Package
+
+outreg2
+
+### Instruction
 
 The list of grades must be in comma-delimited format and saved as a csv file---see the sample grades data, grades_data.csv. Note that there are no columns for the student numbers/id---the script at present cannot distinguish between student numbers and grades. Also, there are no limits to the number of grade columns in the csv file.
 
 Once the grades are in their proper format and calculate_grades.ado is saved in the current working directory, run the script by entering
 
-> grade_stats "PATH_TO_GRADE_LIST" "grades_data.csv" 10
+> grade_stats grades_data.csv 10
 
 in Stata's command line. 10 is for the number of bins of the histograms. The output will be saved in the folder in PATH_TO_GRADE_LIST.
 
@@ -19,8 +26,10 @@ In the table, **sd** is the standard deviation and **p#** is the #-th percentile
 
 To make the program available to all projects, save calculate_grades.ado in your personal ado directory, which you can find by running `sysdir` in Stata's command line.
 
-TO DO:
-- use the syntax command to parse arguments
+### To Do
+
+- convert grades to percentage format
+- add count between grade intervals
 - add notes for table headings
 - improve table headings
 
