@@ -16,7 +16,7 @@ Once the grades are in their proper format and calculate_grades.ado is saved in 
 
 > grade_stats grades_data.csv 10
 
-in Stata's command line. 10 is for the number of bins of the histograms. The output will be saved in the folder in PATH_TO_GRADE_LIST.
+in Stata's command line. 10 is for the number of bins of the histograms.
 
 The table created will look similar to the figure below
 
