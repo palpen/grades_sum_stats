@@ -56,6 +56,7 @@ forvalues i = 1/`n_min1' {
 
   display "`b' to `a'"
   count if inrange(price, `b', `a')
+  display "`r(N)'"
 
 }
 
