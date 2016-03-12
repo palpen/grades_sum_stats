@@ -2,7 +2,7 @@
 
 ### Description
 
-A Stata program that calculates various summary statistics and creates histograms for grades of each test question.
+A Stata program that calculates various summary statistics and creates histograms for grades of each test question. It also creates a text file containing the number of students in each grade range.
 
 ### Required Package
 
@@ -27,9 +27,6 @@ In the table, **sd** is the standard deviation and **p#** is the #-th percentile
 To make the program available to all projects, save calculate_grades.ado in your personal ado directory, which you can find by running `sysdir` in Stata's command line.
 
 ### To Do
-
-- convert grades to percentage format
-- add count between grade intervals
 - add notes for table headings
 - improve table headings
 
