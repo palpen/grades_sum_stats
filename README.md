@@ -14,9 +14,9 @@ The list of grades must be in comma-delimited format and saved as a csv file---s
 
 Once the grades are in their proper format and calculate_grades.ado is saved in the current working directory, run the script by entering
 
-> grade_stats grades_data.csv 10
+> grade_stats grades_data.csv total 100 10
 
-in Stata's command line. 10 is for the number of bins of the histograms.
+in Stata's command line. `total` is the name of the variable containing the total grades, `100` is the maximum grade attainable, and `10` is the number of bins for the histograms.
 
 The table created will look similar to the figure below
 
