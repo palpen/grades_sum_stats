@@ -6,6 +6,7 @@ program define grade_stats
 	args grades_csv total_grade_var max_points hist_bin
 
 	clear
+	clear all
 	set more off
 
 	version 13.1
@@ -26,27 +27,27 @@ program define grade_stats
 	qui outreg2 using grade_statistics, replace sum(detail) keep(`grade_vars') eqkeep(N mean sd min max p1 p5 p10 p25 p50 p75 p90 p95 p99) excel word
 
 	// create histograms
-	* foreach g of local grade_vars {
+	foreach g of local grade_vars {
 
-	* 	hist `g', bin(`hist_bin')
-	* 	graph export "`g'.tif", replace
+		hist `g', bin(`hist_bin')
+		graph export "`g'.tif", replace
 
-	* }
+	}
 
-	// create count intervals
+	// create textfile containing number of students in each grade range
 
-	// convert total to percentages: args total variable, total grade
 	gen total_perc = (`total_grade_var' / `max_points') * 100
 
-	local grade_interval "100 90 80 70 60 50 40 30 20 10"
+	local grade_interval "100 90 80 70 60 50 40 30 20 10 0"
 
 	local n: word count `grade_interval'
 	local n_min1 = `n' - 1
 
+	file open myfile using "student_count_per_grade_range.txt", write replace
 
-	file open myfile using "fixed.txt", write replace
-
-	file write myfile  "Grade Range" _column(18) "Count" _n
+	file write myfile "Number of Students in Each Grade Range" _n
+	file write myfile "--------------------------------------" _n
+	file write myfile  "Grade Range" _column(18) "# of Students" _n
 
 	forvalues i = 1/`n_min1' {
 
@@ -54,9 +55,7 @@ program define grade_stats
 	  local next = `i' + 1
 	  local b: word `next' of `grade_interval'
 
-	  display "`b' to `a'"
-	  count if inrange(total_perc, `b', `a')
-	  // display "`r(N)'"
+	  qui count if inrange(total_perc, `b', `a')
 
 	  file write myfile "`a'% to `b'%" _column(18) "`r(N)'" _n
 	}
@@ -66,31 +65,5 @@ program define grade_stats
 	clear
 
 end
-
-/*
-SAMPLE:
-
-// Counts the number of observations in between range of values
-
-sysuse auto, clear
-
-local grade_interval "15906 13466 11385 6342 5006 4195 3895 3748"
-local n: word count `grade_interval'
-local n_min1 = `n' - 1
-
-forvalues i = 1/`n_min1' {
-
-  local a: word `i' of `grade_interval'
-  local next = `i' + 1
-  local b: word `next' of `grade_interval'
-
-  display "`b' to `a'"
-  count if inrange(price, `b', `a')
-  display "`r(N)'"
-
-}
-
-*/
-
 
 //end
